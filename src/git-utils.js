@@ -13,7 +13,7 @@ const git = async (args, options = {}) => {
  * @return {Promise<Array>} List of modified files in a commit.
  */
 const getCommitFiles = pipeP(
-  hash => git(['diff-tree', '--no-commit-id', '--name-only', '-r', hash]),
+  hash => git(['diff-tree', '-m', '--no-commit-id', '--name-only', '-r', hash]),
   split('\n')
 );
 
