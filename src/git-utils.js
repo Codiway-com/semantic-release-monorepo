@@ -21,7 +21,7 @@ const git = async (args, options = {}) => {
  */
 const getCommitFiles = pipeP(
   hash =>
-    git(['diff-tree', '--root', '--no-commit-id', '--name-only', '-r', hash]),
+    git(['diff-tree', '-m', '--root', '--no-commit-id', '--name-only', '-r', hash]),
   split('\n')
 );
 
